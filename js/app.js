@@ -4,13 +4,15 @@ let hour = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
 const Seattle = {
+    locationName: 'Seattle',
     Min: 23,
     max: 65,
     avg: 6.3,
     arr: [],
     arrMul: [],
+    totalSum:0,
+    //calculate a random number of customers for each hour:
     calAvg1: function () {
         for (let i = 0; i < globalTime.length; i++) {
             this.arr.push(randomNumber(23, 65));
@@ -19,17 +21,18 @@ const Seattle = {
     mularr: function(){
         for(let i=0;i<globalTime.length;i++){
             this.arrMul.push(Math.floor(this.arr[i]* this.avg));
+            this.totalSum+= this.arrMul[i];
         }
         
-    },
+    }
 
 }
 //get the parent element by Id
 let parent1= document.getElementById('parent1');
-console.log((parent));
+// console.log((parent));
 //create a child element
 let child=document.createElement('h3');
-console.log(child);
+// console.log(child);
 //append child to the parent
 parent1.appendChild(child);
 //give text content
@@ -47,189 +50,319 @@ Seattle.mularr();
 for(let i=0;i<globalTime.length;i++){
 
 let child3=document.createElement('li');
-// console.log(child2);
 //append child3 to the child2
 child2.appendChild(child3);
 //give text content
-child3.textContent= globalTime[i]+ Seattle.arrMul[i];
+child3.textContent= globalTime[i]+' : '+ Seattle.arrMul[i]+ ' cookies';
+}
+//create another child li element to show the total in html
+let total =document.createElement('li');
+
+//append total to the child2
+child2.appendChild(total);
+total.textContent= `total : ${this.totalSum} cookies`;
+
+
+const Tokyo = {
+    locationName: 'Tokyo',
+    Min: 3,
+    max: 24,
+    avg: 1.2,
+    arr: [],
+    arrMul: [],
+    totalSumT: 0,
+    //calculate a random number of customers for each hour:
+    calAvg1: function () {
+        for (let i = 0; i < globalTime.length; i++) {
+            this.arr.push(randomNumber(3, 24));
+        }
+    },
+    mularr: function(){
+        for(let i=0;i<globalTime.length;i++){
+            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
+            this.totalSumT+= this.arrMul[i];
+        }
+        
+    },
+
+}
+//get the parent element by Id
+let parentT= document.getElementById('parentT');
+// console.log((parent));
+//create a child element
+let childT=document.createElement('h3');
+// console.log(child);
+//append child to the parent
+parent1.appendChild(childT);
+//give text content
+childT.textContent='Tokyo';
+
+//create another child ul element to show the avg in html
+let childT2=document.createElement('ul');
+// console.log(child1);
+//append child2 to the parent
+parentT.appendChild(childT2);
+
+//create another child li element to show the avg in html
+Tokyo.calAvg1();
+Tokyo.mularr();
+for(let i=0;i<globalTime.length;i++){
+
+let childT3=document.createElement('li');
+//append child3 to the child2
+childT2.appendChild(childT3);
+//give text content
+childT3.textContent= globalTime[i]+' : '+ Tokyo.arrMul[i]+ ' cookies';
+}
+//create another child li element to show the total in html
+let totalT =document.createElement('li');
+
+//append total to the child2
+childT2.appendChild(totalT);
+totalT.textContent= `total : ${this.totalSumT} cookies`;
+
+
+
+const Dubai	 = {
+    locationName: 'Dubai',
+    Min: 11,
+    max: 38,
+    avg: 3.7,
+    arr: [],
+    arrMul: [],
+    totalSumD: 0,
+    //calculate a random number of customers for each hour:
+    calAvg1: function () {
+        for (let i = 0; i < globalTime.length; i++) {
+            this.arr.push(randomNumber(11, 38));
+        }
+    },
+    mularr: function(){
+        for(let i=0;i<globalTime.length;i++){
+            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
+            this.totalSumD+= this.arrMul[i];
+        }
+        
+    },
+
+}
+//get the parent element by Id
+let parentD= document.getElementById('parentD');
+// console.log((parent));
+//create a child element
+let childD=document.createElement('h3');
+// console.log(child);
+//append child to the parent
+parentD.appendChild(childD);
+//give text content
+childD.textContent='Dubai';
+
+//create another child ul element to show the avg in html
+let childD2=document.createElement('ul');
+// console.log(child1);
+//append child2 to the parent
+parentD.appendChild(childD2);
+
+//create another child li element to show the avg in html
+Dubai.calAvg1();
+Dubai.mularr();
+for(let i=0;i<globalTime.length;i++){
+
+let childD3=document.createElement('li');
+//append child3 to the child2
+childD2.appendChild(childD3);
+//give text content
+childD3.textContent= globalTime[i]+' : '+ Dubai.arrMul[i]+ ' cookies';
+}
+//create another child li element to show the total in html
+let totalD =document.createElement('li');
+
+//append total to the child2
+childD2.appendChild(totalD);
+totalD.textContent= `total : ${this.totalSumD} cookies`;
+
+
+
+const Paris	 = {
+    locationName: 'Paris',
+    Min: 20,
+    max: 38,
+    avg: 2.3,
+    arr: [],
+    arrMul: [],
+    totalSumP: 0,
+    //calculate a random number of customers for each hour:
+    calAvg1: function () {
+        for (let i = 0; i < globalTime.length; i++) {
+            this.arr.push(randomNumber(20, 38));
+        }
+    },
+    mularr: function(){
+        for(let i=0;i<globalTime.length;i++){
+            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
+            this.totalSumP+= this.arrMul[i];
+        }
+        
+    },
+
+}
+//get the parent element by Id
+let parentP= document.getElementById('parentP');
+// console.log((parent));
+//create a child element
+let childP=document.createElement('h3');
+// console.log(child);
+//append child to the parent
+parentP.appendChild(childP);
+//give text content
+childP.textContent='Paris';
+
+//create another child ul element to show the avg in html
+let childP2=document.createElement('ul');
+// console.log(child1);
+//append child2 to the parent
+parentP.appendChild(childP2);
+
+//create another child li element to show the avg in html
+Paris.calAvg1();
+Paris.mularr();
+for(let i=0;i<globalTime.length;i++){
+
+let childP3=document.createElement('li');
+//append child3 to the child2
+childP2.appendChild(childP3);
+//give text content
+childP3.textContent= globalTime[i]+' : '+ Paris.arrMul[i]+ ' cookies';
+}
+//create another child li element to show the total in html
+let totalP =document.createElement('li');
+
+//append total to the child2
+childP2.appendChild(totalP);
+totalP.textContent= `total : ${this.totalSumP} cookies`;
+
+
+const Lima	 = {
+    locationName: 'Lima',
+    Min: 3,
+    max: 16,
+    avg: 4.6,
+    arr: [],
+    arrMul: [],
+    totalSumL: 0,
+    //calculate a random number of customers for each hour:
+    calAvg1: function () {
+        for (let i = 0; i < globalTime.length; i++) {
+            this.arr.push(randomNumber(23, 65));
+        }
+    },
+    mularr: function(){
+        for(let i=0;i<globalTime.length;i++){
+            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
+            this.totalSumL+= this.arrMul[i];
+        }
+        
+    },
+
+}
+//get the parent element by Id
+let parentL= document.getElementById('parentL');
+// console.log((parent));
+//create a child element
+let childL=document.createElement('h3');
+// console.log(child);
+//append child to the parent
+parentL.appendChild(childL);
+//give text content
+childL.textContent='Lima';
+
+//create another child ul element to show the avg in html
+let childL2=document.createElement('ul');
+// console.log(child1);
+//append child2 to the parent
+parentL.appendChild(childL2);
+
+//create another child li element to show the avg in html
+Lima.calAvg1();
+Lima.mularr();
+for(let i=0;i<globalTime.length;i++){
+
+let childL3=document.createElement('li');
+//append child3 to the child2
+childL2.appendChild(childL3);
+//give text content
+childL3.textContent= globalTime[i]+' : '+ Lima.arrMul[i]+ ' cookies';
+}
+//create another child li element to show the total in html
+let totalL =document.createElement('li');
+
+//append total to the child2
+childL2.appendChild(totalL);
+totalL.textContent= `total : ${this.totalSumL} cookies`;
+
+//April.5.2021 lab 7
+let globalTimeTable = ['locationName','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
+let parentTable=document.getElementById('tableContainer'); 
+//create table tag
+let table=document.createElement('table'); 
+//append table tag to the parentTable
+parentTable.appendChild(table); 
+//creat heading row to the table
+let headingRow=document.createElement('tr');
+//append heading row
+table.appendChild(headingRow);
+
+//make the heading th
+for(i=0;i<globalTime.length;i++)
+{   
+    // let heading=globalTime[i];
+    //create th
+    let thTag=document.createElement('th');
+    //append the th to the heading row
+    headingRow.appendChild(thTag);
+    //give a text of contant
+    thTag.textContent=globalTime[i];
+
 }
 
+let locationArray=[];
 
+function location(Lname, mularr, avg) {
+    this.locationName = Lname;
+    this.mulmulAvg[i] = mulAvg;
+    console.log(this);
+}
+locationArray.push(this);
 
+location.prototype.render=function(){
+    
+}
 
-// let Tokyo = {
-//     min: 3,
-//     max: 24,
-//     avg: 1.2,
-//     calAvg2: function () {
-//         for (let i = 0; i < globalTime.length; i++) {
-//             arr.push(randomNumber(3, 24));
-//         }
-//     },
-//     mularr: function(){
-//         arrMul.push(arr[i]* avg);
-//     }
-// }
+for (let i= 0; index < locationArray.length; i++) {
+    console.log(locationArray[i]);
+    //create a row(tr) of every location
+    let locationRow=document.createElement('tr');
+    //append the locationRow inside the table
+    table.appendChild(locationRow);
 
-// //get the parent element by Id
-// let parent2= document.getElementById('parent2');
-// console.log((parent2));
-// //create a child element
-// let child4=document.createElement('h3');
-// console.log(child4);
-// //append child to the parent
-// parent.appendChild(child4);
-// //give text content
-// child4.textContent='Tokyo';
+    //create td tag
+    let mulRow=document.createElement('td');
+    //append td in locationRow(tr)
+    locationRow.appendChild(mulRow);
+    mulRow.textContent=locationArray[i].locationName;
+}
 
-// //create another child ul element to show the avg in html
-// let child5=document.createElement('ul');
-// console.log(child5);
-// //append child2 to the parent
-// parent.appendChild(child5);
-
-// //create another child li element to show the avg in html
-// let child6=document.createElement('li');
-// console.log(child6);
-// //append child3 to the child2
-// parent.appendChild(child6);
-// //give text content
-// child5.textContent= Tokyo.arrMul;
-// Tokyo.calAvg2();
-// Tokyo.mularr();
-
-
-
-// let Dubai = {
-//     min: 11,
-//     max: 38,
-//     avg: 3.7,
-//     calAvg3: function () {
-//         for (let i = 0; i < globalTime.length; i++) {
-//             arr.push(randomNumber(11, 38));
-//         }
-//     },
-//     mularr: function(){
-//         arrMul.push(arr[i]* avg);
-//     }
-// }
-// //get the parent element by Id
-// let parent3= document.getElementById('parent3');
-// console.log((parent3));
-// //create a child element
-// let child7=document.createElement('h3');
-// console.log(child7);
-// //append child to the parent
-// parent3.appendChild(child7);
-// //give text content
-// child7.textContent='Dubai';
-
-// //create another child ul element to show the avg in html
-// let child8=document.createElement('ul');
-// console.log(child8);
-// //append child2 to the parent
-// parent3.appendChild(child8);
-
-// //create another child li element to show the avg in html
-// let child9=document.createElement('li');
-// console.log(child9);
-// //append child3 to the child2
-// parent3.appendChild(child9);
-// //give text content
-// child9.textContent= Dubai.arrMul;
-// Dubai.calAvg3();
-// Dubai.mularr();
-
-
-
-// let Paris = {
-//     min: 20,
-//     max: 38,
-//     avg: 2.3,
-//     calAvg4: function () {
-//         for (let i = 0; i < globalTime.length; i++) {
-//             arr.push(randomNumber(20, 38));
-//         }
-//     },
-//     mularr: function(){
-//         arrMul.push(arr[i]* avg);
-//     }
-// }
-
-// //get the parent element by Id
-// let parent4= document.getElementById('parent4');
-// console.log((parent4));
-// //create a child element
-// let child10=document.createElement('h3');
-// console.log(child10);
-// //append child to the parent
-// parent4.appendChild(child10);
-// //give text content
-// child.textContent='Paris';
-
-// //create another child ul element to show the avg in html
-// let child11=document.createElement('ul');
-// console.log(child11);
-// //append child2 to the parent
-// parent4.appendChild(child11);
-
-// //create another child li element to show the avg in html
-// let child12=document.createElement('li');
-// console.log(child12);
-// //append child3 to the child2
-// parent4.appendChild(child12);
-// //give text content
-// child112.textContent= Paris.arrMul;
-
-// Paris.calAvg3();
-// Paris.mularr();
-
-// let Lima = {
-//     min: 2,
-//     max: 16,
-//     avg: 4.6,
-//     calAvg5: function () {
-//         for (let i = 0; i < globalTime.length; i++) {
-//             arr.push(randomNumber(2, 16));
-//         }
-//     },
-//     mularr: function(){
-//         arrMul.push(arr[i]* avg);
-//     }
-
-// }
-
-// //get the parent element by Id
-// let parent5= document.getElementById('parent5');
-// console.log((parent5));
-// //create a child element
-// let child13=document.createElement('h3');
-// console.log(child13);
-// //append child to the parent
-// parent5.appendChild(child13);
-// //give text content
-// child13.textContent='Lima';
-
-// //create another child ul element to show the avg in html
-// let child14=document.createElement('ul');
-// console.log(child14);
-// //append child2 to the parent
-// parent5.appendChild(child14);
-
-// //create another child li element to show the avg in html
-// let child15=document.createElement('li');
-// console.log(child15);
-// //append child3 to the child2
-// parent5.appendChild(child15);
-// //give text content
-// child15.textContent= Lima.arrMul;
-
-// Lima.calAvg5();
-// Lima.mularr();
-
-// parent1.className='parent1';
-// parent2.className='parent2';
-// parent3.className='parent3';
-// parent4.className='parent4';
-// parent5.className='parent4';
-
+function Seattle(locationName,mulAvg,total,avg){
+    this.locationName=locationName,
+    this.mulAvg= mulAvg(),
+    this.total=total
+    this.avg=6.3
+}
+Seattle.prototype.mul=function(){
+    let mul=(this.mul=random(23,65))*this.avg;
+}
+Seattle.push(this);
+for (let i = 0; i < locationArray.length; index++) {
+    
+    locationArray[i].mulAvg;
+}
