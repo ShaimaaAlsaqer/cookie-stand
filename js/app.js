@@ -335,7 +335,7 @@ function location(Lname, mularr, avg) {
 locationArray.push(this);
 
 location.prototype.render=function(){
-    
+
 }
 
 for (let i= 0; index < locationArray.length; i++) {
@@ -366,3 +366,4 @@ for (let i = 0; i < locationArray.length; index++) {
     
     locationArray[i].mulAvg;
 }
+
