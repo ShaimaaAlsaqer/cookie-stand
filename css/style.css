@@ -117,30 +117,7 @@ footer{
 }
 
 
-.parent1{
+/* .parent1{
     background-color:maroon;
     color: wheat;
-}
-.parent2{
-    background-color:maroon;
-    color: wheat;
-}
-.parent3{
-    background-color:maroon;
-    color: wheat;
-}
-.parent4{
-    background-color:maroon;
-    color: wheat;
-}
-.parent5{
-    background-color:maroon;
-    color: wheat;
-}
-#hero2{
-    margin-top: 55px; /*move it under the header*/
-    background-image: url("../img/salmon.png"); /*copy img relative path& paste it in url*/
-    background-repeat: no-repeat; /*no repeat the image*/
-    background-size: cover; /*make the size of background image as cover all width*/
-    height: 450px;
-}
+} */
