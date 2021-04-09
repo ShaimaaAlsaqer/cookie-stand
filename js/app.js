@@ -1,368 +1,197 @@
 'use strict';
 let globalTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
-let hour = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-const Seattle = {
-    locationName: 'Seattle',
-    Min: 23,
-    max: 65,
-    avg: 6.3,
-    arr: [],
-    arrMul: [],
-    totalSum:0,
-    //calculate a random number of customers for each hour:
-    calAvg1: function () {
-        for (let i = 0; i < globalTime.length; i++) {
-            this.arr.push(randomNumber(23, 65));
-        }
-    },
-    mularr: function(){
-        for(let i=0;i<globalTime.length;i++){
-            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
-            this.totalSum+= this.arrMul[i];
-        }
-        
-    }
-
-}
-//get the parent element by Id
-let parent1= document.getElementById('parent1');
-// console.log((parent));
-//create a child element
-let child=document.createElement('h3');
-// console.log(child);
-//append child to the parent
-parent1.appendChild(child);
-//give text content
-child.textContent='Seattle';
-
-//create another child ul element to show the avg in html
-let child2=document.createElement('ul');
-// console.log(child1);
-//append child2 to the parent
-parent1.appendChild(child2);
-
-//create another child li element to show the avg in html
-Seattle.calAvg1();
-Seattle.mularr();
-for(let i=0;i<globalTime.length;i++){
-
-let child3=document.createElement('li');
-//append child3 to the child2
-child2.appendChild(child3);
-//give text content
-child3.textContent= globalTime[i]+' : '+ Seattle.arrMul[i]+ ' cookies';
-}
-//create another child li element to show the total in html
-let total =document.createElement('li');
-
-//append total to the child2
-child2.appendChild(total);
-total.textContent= `total : ${this.totalSum} cookies`;
-
-
-const Tokyo = {
-    locationName: 'Tokyo',
-    Min: 3,
-    max: 24,
-    avg: 1.2,
-    arr: [],
-    arrMul: [],
-    totalSumT: 0,
-    //calculate a random number of customers for each hour:
-    calAvg1: function () {
-        for (let i = 0; i < globalTime.length; i++) {
-            this.arr.push(randomNumber(3, 24));
-        }
-    },
-    mularr: function(){
-        for(let i=0;i<globalTime.length;i++){
-            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
-            this.totalSumT+= this.arrMul[i];
-        }
-        
-    },
-
-}
-//get the parent element by Id
-let parentT= document.getElementById('parentT');
-// console.log((parent));
-//create a child element
-let childT=document.createElement('h3');
-// console.log(child);
-//append child to the parent
-parent1.appendChild(childT);
-//give text content
-childT.textContent='Tokyo';
-
-//create another child ul element to show the avg in html
-let childT2=document.createElement('ul');
-// console.log(child1);
-//append child2 to the parent
-parentT.appendChild(childT2);
-
-//create another child li element to show the avg in html
-Tokyo.calAvg1();
-Tokyo.mularr();
-for(let i=0;i<globalTime.length;i++){
-
-let childT3=document.createElement('li');
-//append child3 to the child2
-childT2.appendChild(childT3);
-//give text content
-childT3.textContent= globalTime[i]+' : '+ Tokyo.arrMul[i]+ ' cookies';
-}
-//create another child li element to show the total in html
-let totalT =document.createElement('li');
-
-//append total to the child2
-childT2.appendChild(totalT);
-totalT.textContent= `total : ${this.totalSumT} cookies`;
-
-
-
-const Dubai	 = {
-    locationName: 'Dubai',
-    Min: 11,
-    max: 38,
-    avg: 3.7,
-    arr: [],
-    arrMul: [],
-    totalSumD: 0,
-    //calculate a random number of customers for each hour:
-    calAvg1: function () {
-        for (let i = 0; i < globalTime.length; i++) {
-            this.arr.push(randomNumber(11, 38));
-        }
-    },
-    mularr: function(){
-        for(let i=0;i<globalTime.length;i++){
-            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
-            this.totalSumD+= this.arrMul[i];
-        }
-        
-    },
-
-}
-//get the parent element by Id
-let parentD= document.getElementById('parentD');
-// console.log((parent));
-//create a child element
-let childD=document.createElement('h3');
-// console.log(child);
-//append child to the parent
-parentD.appendChild(childD);
-//give text content
-childD.textContent='Dubai';
-
-//create another child ul element to show the avg in html
-let childD2=document.createElement('ul');
-// console.log(child1);
-//append child2 to the parent
-parentD.appendChild(childD2);
-
-//create another child li element to show the avg in html
-Dubai.calAvg1();
-Dubai.mularr();
-for(let i=0;i<globalTime.length;i++){
-
-let childD3=document.createElement('li');
-//append child3 to the child2
-childD2.appendChild(childD3);
-//give text content
-childD3.textContent= globalTime[i]+' : '+ Dubai.arrMul[i]+ ' cookies';
-}
-//create another child li element to show the total in html
-let totalD =document.createElement('li');
-
-//append total to the child2
-childD2.appendChild(totalD);
-totalD.textContent= `total : ${this.totalSumD} cookies`;
-
-
-
-const Paris	 = {
-    locationName: 'Paris',
-    Min: 20,
-    max: 38,
-    avg: 2.3,
-    arr: [],
-    arrMul: [],
-    totalSumP: 0,
-    //calculate a random number of customers for each hour:
-    calAvg1: function () {
-        for (let i = 0; i < globalTime.length; i++) {
-            this.arr.push(randomNumber(20, 38));
-        }
-    },
-    mularr: function(){
-        for(let i=0;i<globalTime.length;i++){
-            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
-            this.totalSumP+= this.arrMul[i];
-        }
-        
-    },
-
-}
-//get the parent element by Id
-let parentP= document.getElementById('parentP');
-// console.log((parent));
-//create a child element
-let childP=document.createElement('h3');
-// console.log(child);
-//append child to the parent
-parentP.appendChild(childP);
-//give text content
-childP.textContent='Paris';
-
-//create another child ul element to show the avg in html
-let childP2=document.createElement('ul');
-// console.log(child1);
-//append child2 to the parent
-parentP.appendChild(childP2);
-
-//create another child li element to show the avg in html
-Paris.calAvg1();
-Paris.mularr();
-for(let i=0;i<globalTime.length;i++){
-
-let childP3=document.createElement('li');
-//append child3 to the child2
-childP2.appendChild(childP3);
-//give text content
-childP3.textContent= globalTime[i]+' : '+ Paris.arrMul[i]+ ' cookies';
-}
-//create another child li element to show the total in html
-let totalP =document.createElement('li');
-
-//append total to the child2
-childP2.appendChild(totalP);
-totalP.textContent= `total : ${this.totalSumP} cookies`;
-
-
-const Lima	 = {
-    locationName: 'Lima',
-    Min: 3,
-    max: 16,
-    avg: 4.6,
-    arr: [],
-    arrMul: [],
-    totalSumL: 0,
-    //calculate a random number of customers for each hour:
-    calAvg1: function () {
-        for (let i = 0; i < globalTime.length; i++) {
-            this.arr.push(randomNumber(23, 65));
-        }
-    },
-    mularr: function(){
-        for(let i=0;i<globalTime.length;i++){
-            this.arrMul.push(Math.floor(this.arr[i]* this.avg));
-            this.totalSumL+= this.arrMul[i];
-        }
-        
-    },
-
-}
-//get the parent element by Id
-let parentL= document.getElementById('parentL');
-// console.log((parent));
-//create a child element
-let childL=document.createElement('h3');
-// console.log(child);
-//append child to the parent
-parentL.appendChild(childL);
-//give text content
-childL.textContent='Lima';
-
-//create another child ul element to show the avg in html
-let childL2=document.createElement('ul');
-// console.log(child1);
-//append child2 to the parent
-parentL.appendChild(childL2);
-
-//create another child li element to show the avg in html
-Lima.calAvg1();
-Lima.mularr();
-for(let i=0;i<globalTime.length;i++){
-
-let childL3=document.createElement('li');
-//append child3 to the child2
-childL2.appendChild(childL3);
-//give text content
-childL3.textContent= globalTime[i]+' : '+ Lima.arrMul[i]+ ' cookies';
-}
-//create another child li element to show the total in html
-let totalL =document.createElement('li');
-
-//append total to the child2
-childL2.appendChild(totalL);
-totalL.textContent= `total : ${this.totalSumL} cookies`;
-
-//April.5.2021 lab 7
-let globalTimeTable = ['locationName','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
-let parentTable=document.getElementById('tableContainer'); 
-//create table tag
-let table=document.createElement('table'); 
+//function to cal the random custemer number
+let parentTable = document.getElementById('tableContainer');
+//create table tag 'the big tag'
+let table = document.createElement('table');
 //append table tag to the parentTable
-parentTable.appendChild(table); 
-//creat heading row to the table
-let headingRow=document.createElement('tr');
-//append heading row
-table.appendChild(headingRow);
+parentTable.appendChild(table);
 
-//make the heading th
-for(i=0;i<globalTime.length;i++)
-{   
-    // let heading=globalTime[i];
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+
+  //April.5.2021 lab 7
+  //table
+
+}
+let locationArray = [];
+//constractor for all Location
+function LocationCons(locationName, min, max, avg) {
+  this.locationName = locationName;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+  this.total = 0;
+  this.cookesTotal = []; //cookies minmax
+  this.calAvgCookesPirHour=this.calAvgCookesPirHour();
+  this.render = this.render1();
+  locationArray.push(this);
+
+}
+
+LocationCons.prototype.sumCustomerPerHour = function () {
+  //random    //for
+  //cal the num cookies, then multiply it with avg
+  let cookes=[];
+  for (let i = 0; i < globalTime.length; i++) {
+    //this.cookesTotal[i].push(randomNumber(this.min, this.max));
+    cookes[i]=randomNumber(this.min, this.max);
+
+  }
+  return cookes;
+  // return randomNumber(this.min, this.max);
+
+};
+// cookesTotalPirHour();
+LocationCons.prototype.calAvgCookesPirHour = function () {
+  //for loop move
+  for (let i = 0; i < globalTime.length; i++) {
+    //this.cookesAvgPirHour.push(this.sumCustomerPerHour * this.avg);
+    let cookesAvgPirHour=parseInt(Math.floor(this.sumCustomerPerHour()[i] * this.avg));
+    this.cookesTotal.push(cookesAvgPirHour);
+    this.total += parseInt(this.cookesAvgPirHour);
+  }
+};
+headerTable();
+
+LocationCons.prototype.render1=function () {
+  let totalCol=0;
+  // create row 'tr' to store inside it
+  let storeTr = document.createElement('tr');
+  // append the store row inside table tag
+  table.appendChild(storeTr);
+
+  //create first td tag
+  let firstTr = document.createElement('td');
+  // append td tag into store row
+  storeTr.appendChild(firstTr);
+  // give td tag a value
+  firstTr.textContent = this.locationName;
+
+  for (let i = 0; i < globalTime.length; i++) {
+    // make td tag for every hour
+    let tdEveryHour = document.createElement('td');
+    //append td tag 'tdEveryHour' into store row 'storeTr'
+    storeTr.appendChild(tdEveryHour);
+    //give text content of the avg cookies per hour
+    tdEveryHour.textContent = this.cookesTotal[i];
+    //added
+    totalCol+=parseInt(this.cookesTotal[i]);
+
+  }
+
+  //make total td for every location
+  let tdTotal = document.createElement('td');
+  //append total td into store row
+  storeTr.appendChild(tdTotal);
+  // give value to text content
+  tdTotal.textContent = totalCol;
+
+}
+
+
+let seattle = new LocationCons('seattle', 23, 65, 6.3);
+console.log(seattle);
+// seattle.cookesTotalPirHour();
+//console.log(seattle.cookesTotal);
+let Tokyo = new LocationCons('Tokyo', 3, 24, 1.2);
+console.log(Tokyo);
+// console.log(Tokyo.cookesTotalPirHour);
+let Dubai = new LocationCons('Dubai', 11, 38, 3.7);
+console.log(Dubai);
+// console.log(Dubai.cookesTotalPirHour);
+let Paris = new LocationCons('Paris', 20, 38, 2.3);
+console.log(Paris);
+// console.log(Paris.cookesTotalPirHour);
+let Lima = new LocationCons('Lima', 2, 16, 4.6);
+console.log(Lima);
+// console.log(Lima.cookesTotalPirHour());
+// console.log(Lima.cookesTotal);
+
+console.log('location', locationArray);
+
+
+
+//this function is for header in the table
+function headerTable() {
+  let headerRow = document.createElement('tr');
+  //append tr into table
+  table.appendChild(headerRow);
+  //first th
+  let thTag = document.createElement('th');
+  headerRow.appendChild(thTag);
+  thTag.textContent = 'name';
+  //make the heading th
+  for (let i = 0; i < globalTime.length; i++) {
     //create th
-    let thTag=document.createElement('th');
+    let hourThTag = document.createElement('th');
+
     //append the th to the heading row
-    headingRow.appendChild(thTag);
-    //give a text of contant
-    thTag.textContent=globalTime[i];
+    headerRow.appendChild(hourThTag);
 
+    //give a text of contant th
+    hourThTag.textContent = globalTime[i];
+  }
+  //create last th
+  let lastThTag = document.createElement('th');
+  // appenging the last th in header row"tr"
+  headerRow.appendChild(lastThTag);
+  //give a text of contant to the last th
+  lastThTag.textContent = 'daily location total';
 }
 
-let locationArray=[];
+function funFooter() {
+  //create footer row
+  let footerRow = document.createElement('tr');
+  //append footer row to the table
+  table.appendChild(footerRow);
 
-function location(Lname, mularr, avg) {
-    this.locationName = Lname;
-    this.mulmulAvg[i] = mulAvg;
-    console.log(this);
-}
-locationArray.push(this);
+  //make first th to the footer row
+  let firstFooterTh = document.createElement('th');
+  // append firstFooterTh to footerRow
+  footerRow.appendChild(firstFooterTh);
+  //give text content to firstFooterTh
+  firstFooterTh.textContent = 'totals';
+  let Bigtotal = 0;
+  // for loop to calculate the big total
+  for (let i = 0; i < globalTime.length; i++) {
+    let cookesAvgPirHourInFooter = 0;
+    for (let j = 0; j < locationArray.length; j++) {
+      cookesAvgPirHourInFooter += parseInt(locationArray[j].cookesTotal[i]);
+      Bigtotal += parseInt(locationArray[j].cookesTotal[i]);
 
-location.prototype.render=function(){
-    
-}
+    }
+    console.log(parseInt(cookesAvgPirHourInFooter));
+    //make second th to the footer row
+    let secondFooterTh = document.createElement('th');
+    // append secondFooterTh to footerRow
+    footerRow.appendChild(secondFooterTh);
+    //give text content to second FooterTh
+    secondFooterTh.textContent = cookesAvgPirHourInFooter;
+  }
+  //make final th to the footer row
+  let finalTotalTh = document.createElement('th');
+  // append finalTh to footerRow
+  footerRow.appendChild(finalTotalTh);
+  //give text content to final FooterTh
+  finalTotalTh.textContent = Bigtotal;
 
-for (let i= 0; index < locationArray.length; i++) {
-    console.log(locationArray[i]);
-    //create a row(tr) of every location
-    let locationRow=document.createElement('tr');
-    //append the locationRow inside the table
-    table.appendChild(locationRow);
+}
+funFooter(); //I call the function here to put the the total be the last row in the table
 
-    //create td tag
-    let mulRow=document.createElement('td');
-    //append td in locationRow(tr)
-    locationRow.appendChild(mulRow);
-    mulRow.textContent=locationArray[i].locationName;
-}
 
-function Seattle(locationName,mulAvg,total,avg){
-    this.locationName=locationName,
-    this.mulAvg= mulAvg(),
-    this.total=total
-    this.avg=6.3
+
+/*
+
+*/
+
+//function to the footer "last row in the table"
+
+
+/*
+// headerTable(); //I call the function here to put the the header be the first row in the table
+for (let i = 0; i < location.length; i++) {
+  location[i].cookesAvgPirHour();
+  location[i].render();
 }
-Seattle.prototype.mul=function(){
-    let mul=(this.mul=random(23,65))*this.avg;
-}
-Seattle.push(this);
-for (let i = 0; i < locationArray.length; index++) {
-    
-    locationArray[i].mulAvg;
-}
+*/
