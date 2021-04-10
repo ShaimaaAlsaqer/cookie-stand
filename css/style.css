@@ -1,4 +1,107 @@
-#tableContainer {
+*{
+    /*box-sizing property allows us to include the padding and border in an element's total width and height*/
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Langar', cursive;
+    /*padding: 10px;*/
+    background-color: #99d6ff;
+    color: #001f33;
+    width: 99%;
+}
+header{
+    clear: both; /*clear the floating for the flooter on the left side or right, and it will remain in her place*/
+    display:inline-block;
+    background-color: #001f33;
+    color: whitesmoke;
+    /*top: 0; /*make it all the way to the top*/
+    width: 100%; /*talke the hole width on screen*/
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+
+}
+header h1{
+    font-weight: bold;
+    /*float: left; /*move h1 to the left*/
+    text-align: left;
+}
+header nav{
+    float: right; /*move nav to the right*/
+    padding: 0 30px;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 30px;
+}
+
+header nav ul li a{
+    text-decoration: none; /*to remove underline*/
+    color: #f5f5f5;
+    text-transform: capitalize; /*make the first char capital*/
+    font-size: 15px;
+}
+body header img{
+    max-width:120px
+    
+
+}
+#divIndexContainsImgAndLpcationsL{
+    width:100%;
+    display:inline-block;
+    padding:2% 2% 2% 2%;
+    margin:auto;
+}
+#pFirstCenter{
+    text-align: center;
+    font-weight: bold;
+    font-size: 250%;
+}
+
+#imgIndex{
+    border: 1px;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    width: 700px;
+    height: 700px;
+    overflow: scroll;
+    float: right;
+    display: block;
+}
+#singleParagrephImage{
+    font-weight: bold;
+    font-size: 150%;
+}
+.imgSize{
+    border-image-width: 50%;
+    
+}
+#paragraphHome{
+    float: left;
+    /*padding-left: -1px;*/
+}
+.paragraphBorder{
+    border: 15px solid #001f33;
+    display: block;
+    padding: 2% 2% 2% 2%;
+    margin: auto;
+    
+    
+}
+table,tr ,th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+footer{
+    clear: both; /*clear the floating for the flooter on the left side or right, and it will remain in her place*/
+    display:inline-block;
+    background-color: #001f33;
+    color: whitesmoke;
+    /*top: 0; /*make it all the way to the top*/
+    width: 100%; /*talke the hole width on screen*/
+    padding: 20px;
+    text-align: center;
+    
 }
