@@ -65,7 +65,7 @@ body header img{
     padding-bottom: 50px;
     padding-left: 80px;
     width: 700px;
-    height: 700px;
+    height: 850px;
     overflow: scroll;
     float: right;
     display: block;
@@ -76,7 +76,8 @@ body header img{
 }
 .imgSize{
     border-image-width: 50%;
-    
+    border: 15px solid #001f33;
+    width: 100%;
 }
 #paragraphHome{
     float: left;
