@@ -180,10 +180,44 @@ function funFooter() {
 funFooter(); //I call the function here to put the the total be the last row in the table
 
 
+//lab09
+//since I finish the form, now I will get the element by id for the form
 
-/*
+//locationForm contain the form tag
+let locationForm= document.getElementById('form');
+console.log(locationForm);
+//add the event listener, and put the name of submitter function to submit the form
+//when the user click on submit, the function submitter will be run
+locationForm.addEventListener('submit', submitter);
+//create submitter function to submit the form
+function submitter(event){
+  //prevent the defult behavior of refreshing the page
+   // prevent the default behaviour of refreshing the page
+  event.preventDefult();
 
-*/
+  let locatioNameForm= event.target.location.value; //event.target
+  let minForm= event.target.min.value;
+  let maxForm= event.target.max.value;
+  let avgForm= event.target.avg.value;
+
+  //now we have all necessary values for creating a new location from my contractor function. now, I will create a new location, with the information coming from my form
+
+  //the new object that I'll creating
+  //locationName, min, max, avg
+  //// new instance of the constructor with the new info
+  let addingLocation= new LocationCons(locatioNameForm,minForm,maxForm,avgForm);
+
+  // call methods for the added location
+  let container=document.getElementById('tableContainer');
+  container.textContent='';
+  for (let i = 0; i < location.length; i++) {
+    location[i].calAvgCookesPirHour();
+    location[i].render1();
+
+  }
+
+}
+
 
 //function to the footer "last row in the table"
 
@@ -191,7 +225,7 @@ funFooter(); //I call the function here to put the the total be the last row in 
 /*
 // headerTable(); //I call the function here to put the the header be the first row in the table
 for (let i = 0; i < location.length; i++) {
-  location[i].cookesAvgPirHour();
-  location[i].render();
+  location[i].calAvgCookesPirHour;
+  location[i].render1();
 }
 */
