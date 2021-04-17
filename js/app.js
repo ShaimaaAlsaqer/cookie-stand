@@ -8,8 +8,9 @@ let table = document.createElement('table');
 parentTable.appendChild(table);
 
 function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-
+  let x= Math.floor(Math.random() * (max - min)) + min;
+  console.log(x);
+  return x;
   //April.5.2021 lab 7
   //table
 
@@ -23,8 +24,8 @@ function LocationCons(locationName, min, max, avg) {
   this.avg = avg;
   this.total = 0;
   this.cookesTotal = []; //cookies minmax
-  this.calAvgCookesPirHour=this.calAvgCookesPirHour();
-  this.render = this.render1();
+  this.calAvg=[],
+  this.customerPH=[],
   locationArray.push(this);
 
 }
@@ -32,14 +33,12 @@ function LocationCons(locationName, min, max, avg) {
 LocationCons.prototype.sumCustomerPerHour = function () {
   //random    //for
   //cal the num cookies, then multiply it with avg
-  let cookes=[];
   for (let i = 0; i < globalTime.length; i++) {
     //this.cookesTotal[i].push(randomNumber(this.min, this.max));
-    cookes[i]=randomNumber(this.min, this.max);
+   this.customerPH.push(randomNumber(this.min, this.max));
+    // this.customerPH.push(randomNumber(this.min, this.max));
 
   }
-  return cookes;
-  // return randomNumber(this.min, this.max);
 
 };
 // cookesTotalPirHour();
@@ -47,12 +46,14 @@ LocationCons.prototype.calAvgCookesPirHour = function () {
   //for loop move
   for (let i = 0; i < globalTime.length; i++) {
     //this.cookesAvgPirHour.push(this.sumCustomerPerHour * this.avg);
-    let cookesAvgPirHour=parseInt(Math.floor(this.sumCustomerPerHour()[i] * this.avg));
-    this.cookesTotal.push(cookesAvgPirHour);
-    this.total += parseInt(this.cookesAvgPirHour);
+    // let cookesAvgPirHour=parseInt(Math.floor(this.sumCustomerPerHour()[i] * this.avg));
+    // this.cookesTotal.push(cookesAvgPirHour);
+    // this.calAvg.push(this.customerPH[i]*this.avg);
+    // this.total
+    this.calAvg.push(Math.floor(this.customerPH[i]*this.avg));
+    this.total += Math.floor(this.customerPH[i]*this.avg);
   }
 };
-headerTable();
 
 LocationCons.prototype.render1=function () {
   let totalCol=0;
@@ -74,7 +75,7 @@ LocationCons.prototype.render1=function () {
     //append td tag 'tdEveryHour' into store row 'storeTr'
     storeTr.appendChild(tdEveryHour);
     //give text content of the avg cookies per hour
-    tdEveryHour.textContent = this.cookesTotal[i];
+    tdEveryHour.textContent = this.calAvg[i];
     //added
     totalCol+=parseInt(this.cookesTotal[i]);
 
@@ -85,7 +86,7 @@ LocationCons.prototype.render1=function () {
   //append total td into store row
   storeTr.appendChild(tdTotal);
   // give value to text content
-  tdTotal.textContent = totalCol;
+  tdTotal.textContent = this.total;
 
 }
 
@@ -157,8 +158,8 @@ function funFooter() {
   for (let i = 0; i < globalTime.length; i++) {
     let cookesAvgPirHourInFooter = 0;
     for (let j = 0; j < locationArray.length; j++) {
-      cookesAvgPirHourInFooter += parseInt(locationArray[j].cookesTotal[i]);
-      Bigtotal += parseInt(locationArray[j].cookesTotal[i]);
+      cookesAvgPirHourInFooter += parseInt(locationArray[j].calAvg[i]);
+      Bigtotal += parseInt(locationArray[j].calAvg[i]);
 
     }
     console.log(parseInt(cookesAvgPirHourInFooter));
@@ -177,7 +178,7 @@ function funFooter() {
   finalTotalTh.textContent = Bigtotal;
 
 }
-funFooter(); //I call the function here to put the the total be the last row in the table
+ //I call the function here to put the the total be the last row in the table
 
 
 //lab09
@@ -193,13 +194,14 @@ locationForm.addEventListener('submit', submitter);
 function submitter(event){
   //prevent the defult behavior of refreshing the page
    // prevent the default behaviour of refreshing the page
-  event.preventDefult();
+  // event.preventDefult();
+  event.preventDefault();
 
   let locatioNameForm= event.target.location.value; //event.target
-  let minForm= event.target.min.value;
-  let maxForm= event.target.max.value;
-  let avgForm= event.target.avg.value;
-
+  let minForm= parseInt(event.target.min.value) ;
+  let maxForm= parseInt(event.target.max.value) ;
+  let avgForm= parseFloat(event.target.avg.value) ;
+  console.log(minForm,maxForm,avgForm);
   //now we have all necessary values for creating a new location from my contractor function. now, I will create a new location, with the information coming from my form
 
   //the new object that I'll creating
@@ -209,15 +211,32 @@ function submitter(event){
 
   // call methods for the added location
   let container=document.getElementById('tableContainer');
-  container.textContent='';
-  for (let i = 0; i < location.length; i++) {
-    location[i].calAvgCookesPirHour();
-    location[i].render1();
+  // container.textContent='';
+  table.textContent='';
+  headerTable();
+  console.log('hello');
+  console.log(location);
+  for (let i = 0; i <  locationArray.length; i++) {
+    locationArray[i].sumCustomerPerHour();
+    locationArray[i].calAvgCookesPirHour();
+    locationArray[i].render1();
+    
 
   }
+  funFooter();
 
 }
+headerTable();
 
+
+for (let i = 0; i <  locationArray.length; i++) {
+  locationArray[i].sumCustomerPerHour();
+  locationArray[i].calAvgCookesPirHour();
+  locationArray[i].render1();
+  
+
+}
+funFooter();
 
 //function to the footer "last row in the table"
 
